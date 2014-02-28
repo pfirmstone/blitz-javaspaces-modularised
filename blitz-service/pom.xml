@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>main</artifactId>
-        <groupId>org.dancres</groupId>
+        <groupId>org.sorcersoft.blitz</groupId>
         <version>2.2.1-1</version>
     </parent>
-    <groupId>org.dancres.blitz</groupId>
+
     <artifactId>blitz-service</artifactId>
     <name>Module :: Blitz Service Implementation</name>
     <packaging>jar</packaging>
@@ -16,7 +16,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.dancres.blitz</groupId>
+            <groupId>org.sorcersoft.blitz</groupId>
             <artifactId>blitz-proxy</artifactId>
             <version>${project.version}</version>
         </dependency>

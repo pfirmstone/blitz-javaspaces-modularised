@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>main</artifactId>
-        <groupId>org.dancres</groupId>
+        <groupId>org.sorcersoft.blitz</groupId>
         <version>2.2.1-1</version>
     </parent>
+
     <artifactId>blitz-ui</artifactId>
-    <groupId>org.dancres.blitz</groupId>
     <name>Module :: Blitz User Interface</name>
     <packaging>jar</packaging>
 
@@ -17,7 +17,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.dancres.blitz</groupId>
+            <groupId>org.sorcersoft.blitz</groupId>
             <artifactId>blitz-proxy</artifactId>
             <version>${project.version}</version>
         </dependency>

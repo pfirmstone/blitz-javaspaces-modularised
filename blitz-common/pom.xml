@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>main</artifactId>
-        <groupId>org.dancres</groupId>
+        <groupId>org.sorcersoft.blitz</groupId>
         <version>2.2.1-1</version>
     </parent>
-    <groupId>org.dancres.blitz</groupId>
+
     <artifactId>blitz-common</artifactId>
     <name>Module :: Blitz Common</name>
     <packaging>jar</packaging>
