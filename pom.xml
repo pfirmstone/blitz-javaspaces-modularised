@@ -116,7 +116,7 @@
 
         <repository>
             <id>jboss</id>
-            <url>http://repository.jboss.org/maven2</url>
+            <url>http://repository.jboss.org/</url>
         </repository>
     </repositories>
 
