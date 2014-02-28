@@ -46,6 +46,17 @@
 
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- Upgrade version used by mina -->
+            <dependency>
+                <groupId>backport-util-concurrent</groupId>
+                <artifactId>backport-util-concurrent</artifactId>
+                <version>3.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
