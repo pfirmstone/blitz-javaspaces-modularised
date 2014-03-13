@@ -246,4 +246,8 @@ class LookupData implements Serializable {
 
         return theServiceId;
     }
+
+    public String[] getTheGroups() {
+        return theGroups;
+    }
 }

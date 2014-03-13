@@ -8,9 +8,13 @@ import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.BitSet;
 
+import edu.emory.mathcs.backport.java.util.Arrays;
 import net.jini.core.entry.Entry;
 
 import net.jini.config.Configuration;
@@ -73,6 +77,10 @@ public class LookupStorage implements Syncable {
         try {
             theRegistry =
                 RegistryFactory.get(JOIN_STATE, new RegistryInit(aConfig));
+
+            String[] initialGroupsFromConfig = (String[]) aConfig.getEntry(ConfigurationFactory.BLITZ_MODULE, "initialGroups",String[].class, null);
+
+
             Disk.add(this);
 
             DiskTxn myTxn = DiskTxn.newTxn();
@@ -84,6 +92,26 @@ public class LookupStorage implements Syncable {
 
             // Display recovered settings for user
             theData.dump();
+
+            List<String> recoveredGroups = Arrays.asList(theData.getTheGroups());
+            List<String> configuredGroups = Arrays.asList(initialGroupsFromConfig);
+
+            for (String group : configuredGroups) {
+                if (!recoveredGroups.contains(group)) {
+                    StringBuilder buffer = new StringBuilder("[");
+                    for (String recGroup : recoveredGroups) {
+                        if (recGroup!=null) {
+                            buffer.append(recGroup);
+                            buffer.append(",");
+                        }
+                    }
+                    buffer.append("]");
+                    throw new ConfigurationException("Groups recovered from Blitz database: " + buffer.toString() +
+                            "do not contain the group configured by the blitz config file: " +
+                            group
+                            + " If you changed the initalGroup please delete the blitz databases and restart");
+                }
+            }
         } catch (Exception anE) {
             BlitzServiceImpl.theLogger.log(Level.SEVERE,
                 "Exceptioned loading state",
