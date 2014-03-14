@@ -1,45 +1,27 @@
 package org.dancres.blitz.remote;
 
-import java.io.File;
-import java.io.Serializable;
 import java.io.IOException;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
-import java.util.BitSet;
-
-import edu.emory.mathcs.backport.java.util.Arrays;
-import net.jini.core.entry.Entry;
 
 import net.jini.config.Configuration;
 import net.jini.config.ConfigurationException;
-
-import net.jini.id.Uuid;
-
+import net.jini.core.entry.Entry;
 import net.jini.core.lookup.ServiceID;
-
 import net.jini.discovery.DiscoveryManagement;
-
+import net.jini.id.Uuid;
 import net.jini.lookup.JoinManager;
 
-import org.dancres.util.BytePacker;
-
 import org.dancres.blitz.config.ConfigurationFactory;
-
-import org.dancres.blitz.meta.Registry;
-import org.dancres.blitz.meta.RegistryAccessor;
-import org.dancres.blitz.meta.RegistryFactory;
-import org.dancres.blitz.meta.Initializer;
-
 import org.dancres.blitz.disk.Disk;
 import org.dancres.blitz.disk.DiskTxn;
 import org.dancres.blitz.disk.Syncable;
+import org.dancres.blitz.meta.Initializer;
+import org.dancres.blitz.meta.Registry;
+import org.dancres.blitz.meta.RegistryAccessor;
+import org.dancres.blitz.meta.RegistryFactory;
+import org.dancres.util.BytePacker;
 
 /**
    This class is responsible for managing JoinManagement state saving to
