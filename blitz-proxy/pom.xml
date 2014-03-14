@@ -27,14 +27,24 @@
             <artifactId>outrigger-dl</artifactId>
         </dependency>
 
-		<dependency>
-           <groupId>com.sleepycat</groupId>
-           <artifactId>je</artifactId>
-       </dependency>
-	
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*</exclude>
+                </excludes>
+            </resource>
+        </resources>
 	    <plugins>
 
             <plugin>
