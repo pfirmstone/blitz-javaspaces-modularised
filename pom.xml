@@ -285,7 +285,7 @@
 
     <properties>
         <junit.version>4.8.2</junit.version>
-        <river.version>2.2.1</river.version>
+        <river.version>2.2.3</river.version>
         <sleepycat.version>4.0.92</sleepycat.version>
         <mina.version>1.0.5</mina.version>
         <rio.version>5.0-M3</rio.version>
